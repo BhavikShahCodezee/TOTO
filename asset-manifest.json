@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TOTO/static/css/main.705df880.css",
+    "main.js": "/TOTO/static/js/main.cd2a394a.js",
+    "index.html": "/TOTO/index.html",
+    "main.705df880.css.map": "/TOTO/static/css/main.705df880.css.map",
+    "main.cd2a394a.js.map": "/TOTO/static/js/main.cd2a394a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.705df880.css",
+    "static/js/main.cd2a394a.js"
+  ]
+}
