@@ -10,3 +10,11 @@ export const login = async (username: string, password: string) => {
   const { data } = await api.get<User[]>(`/users?username=${username}&password=${password}`);
   return data.length > 0 ? data[0] : null;
 };
+
+export const logout = () => {
+  localStorage.removeItem('user');
+};
+
+export const getCurrentUser = () => {
+  return JSON.parse(localStorage.getItem('user') || 'null');
+};

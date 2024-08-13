@@ -6,6 +6,7 @@ import TodoItem from './TodoItem';
 const TodoList: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -31,10 +32,8 @@ const TodoList: React.FC = () => {
   };
 
   const handleDeleteTodo = async (id: number) => {
-    if (window.confirm('Are you sure you want to delete this task?')) {
-      await deleteTodo(id);
-      setTodos(todos.filter(todo => todo.id !== id));
-    }
+    await deleteTodo(id);
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   const handleEditTodo = async (id: number, newText: string) => {
@@ -42,8 +41,18 @@ const TodoList: React.FC = () => {
     setTodos(todos.map(t => (t.id === id ? updatedTodo : t)));
   };
 
+  const filteredTodos = todos.filter(todo =>
+    todo.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div>
+    <div style={{ padding: '1rem' }}>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search tasks..."
+      />
       <input
         type="text"
         value={newTodo}
@@ -53,7 +62,7 @@ const TodoList: React.FC = () => {
       <button onClick={handleAddTodo}>Add</button>
 
       <ul>
-        {todos.map(todo => (
+        {filteredTodos.map(todo => (
           <TodoItem
             key={todo.id}
             todo={todo}

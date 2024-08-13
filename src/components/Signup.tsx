@@ -1,27 +1,27 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signup } from '../services/auth';
 import { AuthContext } from '../context/AuthContext';
-import { login } from '../services/auth';
 
-const Login: React.FC = () => {
+const Signup: React.FC = () => {
   const { login: loginUser } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    const user = await login(username, password);
+  const handleSignup = async () => {
+    const user = await signup(username, password);
     if (user) {
       loginUser(user);
       navigate('/');
     } else {
-      alert('Invalid credentials');
+      alert('Signup failed');
     }
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Signup</h2>
       <input
         type="text"
         value={username}
@@ -34,9 +34,9 @@ const Login: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleSignup}>Signup</button>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

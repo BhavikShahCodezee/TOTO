@@ -1,0 +1,172 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  header {
+    font-size: 1.75rem;
+  }
+  
+  footer {
+    font-size: 1rem;
+    margin-top: auto;
+  }
+  
+  .container {
+    flex-grow: 1; /* Make the container take up all available space */
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li input[type="checkbox"] {
+    margin-right: 0.75rem;
+  }
+  
+  li span {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+  
+  li span.completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  li button {
+    width: auto;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+  }
+  
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .modal h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content {
+    margin-bottom: 1rem;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-actions button {
+    margin-left: 1rem;
+  }
+  
+  .modal-actions button:first-child {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .modal-actions button:last-child {
+    background-color: #d9534f;
+    color: white;
+  }
+  
+  .modal-actions button:last-child:hover {
+    background-color: #c9302c;
+  }
+  
