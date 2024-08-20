@@ -21,6 +21,7 @@ const Signup: React.FC = () => {
 
   return (
     <div>
+      <div className='login_wrapper'>
       <h2>Signup</h2>
       <input
         type="text"
@@ -35,6 +36,12 @@ const Signup: React.FC = () => {
         placeholder="Password"
       />
       <button onClick={handleSignup}>Signup</button>
+      <p>
+        Login 
+        <a href="/login" className="signup-link">Login</a>
+      </p>
+      </div>
+      
     </div>
   );
 };

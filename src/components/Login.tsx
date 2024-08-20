@@ -18,23 +18,29 @@ const Login: React.FC = () => {
       alert('Invalid credentials');
     }
   };
-
   return (
-    <div>
-      <h2>Login</h2>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button onClick={handleLogin}>Login</button>
+    <div className='login_main'>
+      <div className='login_wrapper'>
+        <h2>Login</h2>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button onClick={handleLogin}>Login</button>
+        <p>
+        Don't have an account?
+        <a href="/signup" className="signup-link">Sign Up</a>
+      </p>
+      </div>
+      
     </div>
   );
 };

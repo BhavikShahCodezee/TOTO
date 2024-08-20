@@ -169,4 +169,11 @@
   .modal-actions button:last-child:hover {
     background-color: #c9302c;
   }
-  
+  .login_wrapper{
+    max-width: 300px;
+    width:100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
