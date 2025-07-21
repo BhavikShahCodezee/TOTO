@@ -1,6 +1,7 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { User } from '../types';
+// @typescript-eslint/no-unused-vars
+import React, { createContext, useState } from 'react';
 import { getCurrentUser } from '../services/auth';
+import { User } from '../types';
 
 interface AuthContextProps {
   user: User | null;
